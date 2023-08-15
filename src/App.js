@@ -1,14 +1,19 @@
-import React,{ useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
+import {Col, Container, Row } from "react-bootstrap";
 import NaviApp from "./components/pages/NaviApp";
 
 function App() {  
   return (
      <div className="App">
+      <div className="Inner">
+        
       <header  className="App-header">
         <h1>Board Game Calculator PWA</h1>
       </header>
       <NaviApp />
+     </div>
+    
     </div>
   );
 }

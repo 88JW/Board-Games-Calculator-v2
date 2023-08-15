@@ -12,4 +12,13 @@
   text-align: center;
 }
 
+.Inner{
+  background-color: #43464d;
+  max-width: 750px;
+  height: auto;
+  min-height: 600px;
+  border-radius: 10px;  
+  padding: 20px;
+}
+
 

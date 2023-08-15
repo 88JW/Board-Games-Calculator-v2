@@ -131,7 +131,7 @@ function NumberForm({ formCount, playerName }) {
             onChange={handleChange6}
           />
         </Form.Group>
-         <Form.Group controlId="formNumber7">
+        <Form.Group controlId="formNumber7">
           <Form.Label>
             Znaczniki Duetu / Cele <br></br>
           </Form.Label>
@@ -233,7 +233,7 @@ function App() {
             </div>
           ))}
         </>
-      )}      
+      )}
     </Container>
   );
 }

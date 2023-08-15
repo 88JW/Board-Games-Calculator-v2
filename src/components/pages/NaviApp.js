@@ -1,13 +1,13 @@
-import React , { useState } from "react";
+import React, { useState } from "react";
 import Home from "./Home";
-import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { Navbar, Container, Nav, Button, CloseButton } from "react-bootstrap";
 import { Route, Routes, Link } from "react-router-dom";
 
 
 import NaviGame from "./NaviGame";
 
 function NaviApp() {
- const [menuVisible, setMenuVisible] = useState(true); // dodajemy stan menuVisible
+  const [menuVisible, setMenuVisible] = useState(true); // dodajemy stan menuVisible
 
   const handleMenuClick = () => {
     setMenuVisible(false); // zmieniamy stan na false po kliknięciu w element menu
@@ -35,13 +35,14 @@ function NaviApp() {
         </div>
       )}
 
-     <div>
+      <div>
         <Routes>
           <Route path="/navigame/*" element={<NaviGame />} />
           <Route path="/home" element={<Home />} />
         </Routes>
       </div>
-    <Button variant="primary" href="/">Powrót do strony głównej</Button>
+
+      <Button variant="secondary" href="/"> X </Button>
     </div>
   );
 }
