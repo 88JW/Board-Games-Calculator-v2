@@ -25,21 +25,21 @@ function NaviGames() {
       {menuVisible && (
         <Container>
           <Row>
-            <Col xs={6}>
+            <Col xs={12} md={6} >
               <div className="tile">
                 <Link to="everdell" onClick={handleMenuClick}>
                   <img src={everdell} className="kafelek" xs={6}></img>
                 </Link>
               </div>
             </Col>
-            <Col xs={6}>
+            <Col xs={12} md={6}>
               <div className="tile">
                 <Link to="najlepsza_gra_o_psach_2" onClick={handleMenuClick}>
                   <img src={Najlepsza} className="kafelek"></img>
                 </Link>
               </div>
             </Col>
-            <Col xs={6}>
+            <Col xs={12} md={6}>
               <div className="tile">
                 <Link to="na_skrzydlach" onClick={handleMenuClick}>
                   <img src={naSkrzydlach} className="kafelek"></img>
