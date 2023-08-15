@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import {Col, Container, Row } from "react-bootstrap";
 import NaviApp from "./components/pages/NaviApp";
 
 function App() {  
