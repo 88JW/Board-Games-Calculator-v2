@@ -7,11 +7,13 @@ import "../pages/games/css/kafelek.css";
 import everdell from "./games/everdell/everdell.png";
 import naSkrzydlach from "./games/na_skrzydlach/wingspan.png";
 import Najlepsza from "./games/najlepsza_gra_o_psach_2/najlesza.png";
+import pociagi from "./games/pociagi/pociagi.jpg";
 
 // importujemy komponenty 
 import NajlepszaGraOPpsach2 from "./games/najlepsza_gra_o_psach_2/najlepsza_gra_o_psach_2";
 import NaSkrzydlach from "./games/na_skrzydlach/na_skrzydlach";
 import Everdell from "./games/everdell/everdell";
+import Pociagi from "./games/pociagi/pociagi";
 function NaviGames() {
   const [menuVisible, setMenuVisible] = useState(true); // dodajemy stan menuVisible
 
@@ -28,21 +30,28 @@ function NaviGames() {
             <Col xs={12} md={6} >
               <div className="tile">
                 <Link to="everdell" onClick={handleMenuClick}>
-                  <img src={everdell} className="kafelek" xs={6}></img>
+                  <img src={everdell} className="kafelek" xs={6} alt="" ></img>
                 </Link>
               </div>
             </Col>
             <Col xs={12} md={6}>
               <div className="tile">
                 <Link to="najlepsza_gra_o_psach_2" onClick={handleMenuClick}>
-                  <img src={Najlepsza} className="kafelek"></img>
+                  <img src={Najlepsza} className="kafelek" alt="" ></img>
                 </Link>
               </div>
             </Col>
             <Col xs={12} md={6}>
               <div className="tile">
                 <Link to="na_skrzydlach" onClick={handleMenuClick}>
-                  <img src={naSkrzydlach} className="kafelek"></img>
+                  <img src={naSkrzydlach} className="kafelek" alt="" ></img>
+                </Link>
+              </div>
+            </Col>
+            <Col xs={12} md={6}>
+              <div className="tile">
+                <Link to="pociagi" onClick={handleMenuClick}>
+                  <img src={pociagi} className="kafelek" alt="" ></img>
                 </Link>
               </div>
             </Col>
@@ -58,6 +67,7 @@ function NaviGames() {
             element={<NajlepszaGraOPpsach2 />}
           />
           <Route path="/na_skrzydlach" element={<NaSkrzydlach />} />
+          <Route path="/pociagi" element={<Pociagi />} />
         </Routes>
       </div>
     </div>

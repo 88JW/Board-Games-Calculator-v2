@@ -4,19 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ".././css/contenerGraczy.css";
 
 function NumberForm({ formCount, playerName }) {
-  const [number1, setNumber1] = useState(0);
-  const [number2, setNumber2] = useState(0);
-  const [number3, setNumber3] = useState(0);
-  const [number4, setNumber4] = useState(0);
-  const [number5, setNumber5] = useState(0);
-  const [number6, setNumber6] = useState(0);
-  const [number7, setNumber7] = useState(0);
-  const [number8, setNumber8] = useState(0);
+  const [number1, setNumber1] = useState("");
+  const [number2, setNumber2] = useState("");
+  const [number3, setNumber3] = useState("");
   const [sum, setSum] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const sum = parseInt(number1) + parseInt(number2) + parseInt(number3) + parseInt(number4) + parseInt(number5) + parseInt(number6) + parseInt(number7) + parseInt(number8);
+    const sum = parseInt(number1) + parseInt(number2) + parseInt(number3);
     setSum(sum);
   };
 
@@ -32,36 +27,15 @@ function NumberForm({ formCount, playerName }) {
     setNumber3(event.target.value);
   };
 
-  const handleChange4 = (event) => {
-    setNumber4(event.target.value);
-  };
-  const handleChange5 = (event) => {
-    setNumber5(event.target.value);
-  };
-  const handleChange6 = (event) => {
-    setNumber6(event.target.value);
-  };
-  const handleChange7 = (event) => {
-    setNumber7(event.target.value);
-  };
-  const handleChange8 = (event) => {
-    setNumber8(event.target.value);
-  };
-
   const handleButtonClick = () => {
-    const sum = parseInt(number1) + parseInt(number2) + parseInt(number3) + parseInt(number4) + parseInt(number5) + parseInt(number6) + parseInt(number7) + parseInt(number8);
+    const sum = parseInt(number1) + parseInt(number2) + parseInt(number3);
     setSum(sum);
   };
 
   const handleResetClick = () => {
-    setNumber1(0);
-    setNumber2(0);
-    setNumber3(0);
-    setNumber4(0);
-    setNumber5(0);
-    setNumber6(0);
-    setNumber7(0);
-    setNumber8(0);
+    setNumber1("");
+    setNumber2("");
+    setNumber3("");
     setSum("");
   };
 
@@ -72,7 +46,7 @@ function NumberForm({ formCount, playerName }) {
         <Form.Group controlId="formNumber1">
           <Form.Label>
             {" "}
-            Punkty bazowe z kart:<br></br>
+            Długość trasy:<br></br>
           </Form.Label>
           <Form.Control
             type="number"
@@ -83,7 +57,7 @@ function NumberForm({ formCount, playerName }) {
         </Form.Group>
         <Form.Group controlId="formNumber2">
           <Form.Label>
-            Punkty bonusowe z kart pomyślości:<br></br>
+            Zrealizowane bilety<br></br>
           </Form.Label>
           <Form.Control
             type="number"
@@ -92,70 +66,15 @@ function NumberForm({ formCount, playerName }) {
             onChange={handleChange2}
           />
         </Form.Group>
-        <Form.Group controlId="formNumber3">
+        <Form.Group controlId="formNumber2">
           <Form.Label>
-            Punkty z wydarzeń:<br></br>
+            Najdłuższa trasa 10pkt<br></br>
           </Form.Label>
           <Form.Control
             type="number"
             placeholder="Wprowadź punkty"
             value={number3}
             onChange={handleChange3}
-          />
-        </Form.Group>
-        <Form.Group controlId="formNumber4">
-          <Form.Label>
-            Punkty z podróży:<br></br>
-          </Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Wprowadź punkty"
-            value={number4}
-            onChange={handleChange4}
-          />
-        </Form.Group>
-        <Form.Group controlId="formNumber5">
-          <Form.Label>
-            Punkty z żetonów:<br></br>
-          </Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Wprowadź punkty"
-            value={number5}
-            onChange={handleChange5}
-          />
-        </Form.Group>
-        <Form.Group controlId="formNumber6">
-          <Form.Label>
-            Punkty za perły:<br></br>
-          </Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Wprowadź punkty"
-            value={number6}
-            onChange={handleChange6}
-          />
-        </Form.Group>
-        <Form.Group controlId="formNumber7">
-          <Form.Label>
-            Punkty z cudów:<br></br>
-          </Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Wprowadź punkty"
-            value={number7}
-            onChange={handleChange7}
-          />
-        </Form.Group>
-        <Form.Group controlId="formNumber8">
-          <Form.Label>
-            Punkty z ozdób:<br></br>
-          </Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Wprowadź punkty"
-            value={number8}
-            onChange={handleChange8}
           />
         </Form.Group>
       </Form>
@@ -204,8 +123,7 @@ function App() {
             <Form.Control
               as="select"
               value={numPlayers}
-              onChange={handleNumPlayersChange}
-            >
+              onChange={handleNumPlayersChange}            >
               <option value="0">Wybierz...</option>
               <option value="1">1 gracz</option>
               <option value="2">2 graczy</option>
