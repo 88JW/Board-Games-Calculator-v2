@@ -13,7 +13,7 @@ import pociagi from "./games/pociagi/pociagi.jpg";
 import NajlepszaGraOPpsach2 from "./games/najlepsza_gra_o_psach_2/najlepsza_gra_o_psach_2";
 import NaSkrzydlach from "./games/na_skrzydlach/na_skrzydlach";
 import Everdell from "./games/everdell/everdell";
-import Pociagi from "./games/pociagi/pociagi";
+import Pociagi from "./games/pociagi/PociagiApp";
 function NaviGames() {
   const [menuVisible, setMenuVisible] = useState(true); // dodajemy stan menuVisible
 

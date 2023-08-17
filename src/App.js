@@ -8,7 +8,7 @@ function App() {
       <div className="Inner">
         
       <header  className="App-header">
-        <h1>Board Game Calculator PWA</h1>
+        <h1>Board Game Calculator</h1>
       </header>
       <NaviApp />
      </div>

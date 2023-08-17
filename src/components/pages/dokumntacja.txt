@@ -1,0 +1,6 @@
+{[...Array(numPlayers)].map((_, index) => ...))} - renderuje pola do wprowadzania nazw graczy dla każdego gracza
+<Form.Group controlId="formPlayerName" key={index}> - tworzy element Form.Group z unikalnym kluczem key
+<Form.Label>Wprowadź nazwę gracza {index + 1}:</Form.Label> - tworzy etykietę dla pola tekstowego
+<Form.Control type="text" placeholder="Wprowadź nazwę" value={playerNames[index]} onChange={(event) => handleNameChange(index, event.target.value)} /> - tworzy pole tekstowe, które jest powiązane z odpowiednim elementem w tablicy playerNames
+handleNameChange(index, event.target.value) - funkcja obsługi zmiany nazwy gracza, która aktualizuje odpowiedni element w tablicy playerNames
+<Button variant="primary" type="button" onClick={handleStartClick} disabled={numPlayers === 0} block>Rozpocznij</Button> - tworzy przycisk "Rozpocznij", który wywołuje funkcję handleStartClick po kliknięciu
