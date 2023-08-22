@@ -1,9 +1,9 @@
 import React from "react";
 function Home() {
-  return (  
-    <div>     
+  return (
+    <div>
       <p>Witaj w aplikacji do liczenia punktów w grach planszowych. Aplikacja jest w fazie rozwoju, więc proszę o wyrozumiałość.</p>
-      </div>
+    </div>
   );
 }
 export default Home;
