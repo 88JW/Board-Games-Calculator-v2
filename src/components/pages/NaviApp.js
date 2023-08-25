@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Home from "./Home";
 import NaviGame from "./NaviGame";
 import Instrukcje from "./Instructions";
+import Licznik from "./Licznik";
+
 import { Navbar, Container, Nav, Button, } from "react-bootstrap";
 import { Route, Routes, Link } from "react-router-dom";
 import { MDBIcon } from 'mdb-react-ui-kit';
@@ -27,10 +29,13 @@ function NaviApp() {
                   </Nav.Link>
                   <Nav.Link as={Link} to="navigame" onClick={handleMenuClick}>
                     Gry
-                  </Nav.Link> 
+                  </Nav.Link>
                   <Nav.Link as={Link} to="instrukcje" onClick={handleMenuClick}>
                     Instrukcje
-                  </Nav.Link>             
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="licznik" onClick={handleMenuClick}>
+                    Licznik
+                  </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -43,6 +48,7 @@ function NaviApp() {
           <Route path="/navigame/*" element={<NaviGame />} />
           <Route path="/home" element={<Home />} />
           <Route path="/instrukcje" element={<Instrukcje />} />
+          <Route path="/licznik" element={<Licznik />} />
         </Routes>
       </div>
 

@@ -13,7 +13,7 @@ import pociagi from "./games/pociagi/pociagi.jpg";
 import NajlepszaGraOPpsach2 from "./games/najlepsza_gra_o_psach_2/najlepsza_gra_o_psach_2";
 import NaSkrzydlach from "./games/na_skrzydlach/na_skrzydlach";
 import Everdell from "./games/everdell/everdell";
-import Pociagi from "./games/pociagi/PociagiApp";
+import Pociagi from "./games/pociagi/copypociagi";
 function NaviGames() {
   const [menuVisible, setMenuVisible] = useState(true); // dodajemy stan menuVisible
 
@@ -67,7 +67,7 @@ function NaviGames() {
             element={<NajlepszaGraOPpsach2 />}
           />
           <Route path="/na_skrzydlach" element={<NaSkrzydlach />} />
-          <Route path="/pociagi" element={<Pociagi />} />
+          <Route path="/pociagi" element={<Pociagi />} />          
         </Routes>
       </div>
     </div>
