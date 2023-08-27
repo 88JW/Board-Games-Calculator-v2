@@ -3,6 +3,7 @@ import Home from "./Home";
 import NaviGame from "./NaviGame";
 import Instrukcje from "./Instructions";
 import Licznik from "./Licznik";
+import Test from "./Test";
 
 import { Navbar, Container, Nav, Button, } from "react-bootstrap";
 import { Route, Routes, Link } from "react-router-dom";
@@ -36,6 +37,9 @@ function NaviApp() {
                   <Nav.Link as={Link} to="licznik" onClick={handleMenuClick}>
                     Licznik
                   </Nav.Link>
+                  <Nav.Link as={Link} to="test" onClick={handleMenuClick}>
+                    Test
+                  </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -49,6 +53,7 @@ function NaviApp() {
           <Route path="/home" element={<Home />} />
           <Route path="/instrukcje" element={<Instrukcje />} />
           <Route path="/licznik" element={<Licznik />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </div>
 

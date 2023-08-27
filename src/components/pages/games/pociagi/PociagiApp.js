@@ -1,45 +1,35 @@
-import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import CommonPlayerForm from '../../CommonPlayerForm';
-import PociagiNumberForm from './PociagiNumberForm';
+import React, { useState } from "react";
+import CommonPlayerForm from "../../CommonPlayerForm";
+// pobieranie komponentu CommonPlayerForm z pliku CommonPlayerForm.js wyboru gracza i imienia
 
-function PociagiAPP2() {
-  const [numPlayers, setNumPlayers] = useState(0);
+import PociagiCalculation from "./PociagiCalculation";
+// pobieranie komponentu NumberForm z pliku NumberForm.js dla generowania formularzy dla każdego gracza
+
+
+// Funkcja główna komponentu App - renderuje formularz CommonPlayerForm oraz formularze dla każdego użytkownika (NumberForm)  
+function App() {
   const [playerNames, setPlayerNames] = useState([]);
+  // tablica z imionami graczy
+  const [showCommonPlayerForm, setShowCommonPlayerForm] = useState(true);
+  // zmienna do renderowania warunkowego dla CommonPlayerForm
 
-  const handleNumPlayersChange = (num) => {
-    // aktualizacja liczby graczy
-    setNumPlayers(num);
-    // resetowanie nazw graczy
-    const names = new Array(num).fill('');
+  const handleStart = (names) => {
     setPlayerNames(names);
+    // przekazanie imion graczy do tablicy playerNames
+    setShowCommonPlayerForm(false);
+    //  zmiana wartości zmiennej showCommonPlayerForm na false
   };
-
-  const handleNameChange = (index, name) => {
-    // aktualizacja nazwy gracza
-    const names = [...playerNames];
-    names[index] = name;
-    setPlayerNames(names);
-  };
-
-  const handleStart = () => {
-    // funkcja wywoływana po kliknięciu przycisku "Rozpocznij"
-    console.log('Rozpocznij');
-  };
-
-  const [forms, setForms] = useState([]);
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <h1>Pociągi</h1>
-          <CommonPlayerForm numPlayers={numPlayers} playerNames={playerNames} onNumPlayersChange={handleNumPlayersChange} onNameChange={handleNameChange} onStart={handleStart} />
-          {forms}
-        </Col>
-      </Row>
-    </Container>
+    <div>
+      {/* Renderowanie warunkowe dla CommonPlayerForm */}
+      {showCommonPlayerForm && <CommonPlayerForm onStart={handleStart} />}
+      {/* Dodanie formularza dla każdego użytkownika */}
+      {playerNames.map((name, index) => (
+        <PociagiCalculation key={index} formCount={index + 1} playerName={name} />
+      ))}
+    </div>
   );
 }
 
-export default PociagiAPP2;
+export default App;
