@@ -10,9 +10,9 @@ import Najlepsza from "./games/najlepsza_gra_o_psach_2/najlesza.png";
 import pociagi from "./games/pociagi/pociagi.jpg";
 
 // importujemy komponenty 
-import NajlepszaGraOPpsach2 from "./games/najlepsza_gra_o_psach_2/najlepsza_gra_o_psach_2";
-import NaSkrzydlach from "./games/na_skrzydlach/na_skrzydlach";
-import Everdell from "./games/everdell/everdell";
+import NajlepszaGraOPpsach2 from "./games/najlepsza_gra_o_psach_2/PsyApp";
+import NaSkrzydlach from "./games/na_skrzydlach/NaSkrzydlachApp";
+import Everdell from "./games/everdell/EverdellApp";
 import Pociagi from "./games/pociagi/PociagiApp";
 function NaviGames() {
   const [menuVisible, setMenuVisible] = useState(true); // dodajemy stan menuVisible
