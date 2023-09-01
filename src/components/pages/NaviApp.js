@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import { Navbar, Container, Nav,} from "react-bootstrap";
+import { Route, Routes, Link } from "react-router-dom";
+
+import {MDBBtn,} from 'mdb-react-ui-kit';
+
 import Home from "./Home";
 import NaviGame from "./NaviGame";
 import Instrukcje from "./Instructions";
 import Licznik from "./Licznik";
 import Test from "./Test";
-
-import { Navbar, Container, Nav, Button, } from "react-bootstrap";
-import { Route, Routes, Link } from "react-router-dom";
-import { MDBIcon } from 'mdb-react-ui-kit';
 
 function NaviApp() {
   const [menuVisible, setMenuVisible] = useState(true); // dodajemy stan menuVisible
@@ -20,6 +21,7 @@ function NaviApp() {
     <div>
       {menuVisible && ( // wyświetlamy menu tylko jeśli menuVisible jest true
         <div className="Navstyle">
+          
           <Navbar bg="light" data-bs-theme="light">
             <Container>
               <Navbar.Toggle />
@@ -56,10 +58,9 @@ function NaviApp() {
           <Route path="/test" element={<Test />} />
         </Routes>
       </div>
-
-      <Button href="/" variant="outline-light">
-        <MDBIcon fas icon="times-circle" />
-      </Button>
+      <br />
+      <MDBBtn href="/" className="btn-close btn-close-white" color="none" aria-label="Close" />
+      
     </div>
   );
 }
