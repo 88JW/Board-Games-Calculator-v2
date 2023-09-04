@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CommonPlayerForm from "../CommonPlayerForm";
-import EverdellCalculation from "./LicznikCalculation";
+import LicznikCalculation from "./LicznikCalculation";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -23,8 +24,9 @@ function App() {
       {showCommonPlayerForm && <CommonPlayerForm onStart={handleStart} />}
       {/* Dodanie formularza dla każdego użytkownika */}
       {playerNames.map((name, index) => (
-        <EverdellCalculation key={index} formCount={index + 1} playerName={name} />
+        <LicznikCalculation key={index} formCount={index + 1} playerName={name} />
       ))}
+      
     </div>
   );
 }

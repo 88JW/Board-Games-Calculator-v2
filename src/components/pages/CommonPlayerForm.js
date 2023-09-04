@@ -63,6 +63,7 @@ function CommonPlayerForm(props) {
         Rozpocznij
       </Button>
     </Form>
+    
   );
 }
 
