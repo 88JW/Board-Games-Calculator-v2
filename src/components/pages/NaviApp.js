@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Navbar, Container, Nav,} from "react-bootstrap";
+import { Navbar, Container, Nav, } from "react-bootstrap";
 import { Route, Routes, Link } from "react-router-dom";
 
-import {MDBBtn,} from 'mdb-react-ui-kit';
+import { MDBBtn, } from 'mdb-react-ui-kit';
 
 import Home from "./Home";
 import NaviGame from "./NaviGame";
 import Instrukcje from "./Instructions";
-import Licznik from "./Licznik";
+import Licznik from "./licznik/LicznikApp";
 import Test from "./Test";
 
 function NaviApp() {
@@ -21,7 +21,7 @@ function NaviApp() {
     <div>
       {menuVisible && ( // wyświetlamy menu tylko jeśli menuVisible jest true
         <div className="Navstyle">
-          
+
           <Navbar bg="light" data-bs-theme="light">
             <Container>
               <Navbar.Toggle />
@@ -60,7 +60,7 @@ function NaviApp() {
       </div>
       <br />
       <MDBBtn href="/" className="btn-close btn-close-white" color="none" aria-label="Close" />
-      
+
     </div>
   );
 }
