@@ -17,3 +17,8 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+.winner{
+  outline: solid 2px rgb(0, 203, 85);
+outline-offset: -2px;
+}

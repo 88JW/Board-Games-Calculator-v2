@@ -25,8 +25,7 @@ function App() {
       {/* Dodanie formularza dla każdego użytkownika */}
       {playerNames.map((name, index) => (
         <LicznikCalculation key={index} formCount={index + 1} playerName={name} />
-      ))}
-      
+      ))}      
     </div>
   );
 }
