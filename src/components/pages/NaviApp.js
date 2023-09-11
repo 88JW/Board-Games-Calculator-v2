@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, Container, Nav, } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { Route, Routes, Link } from "react-router-dom";
 
 import { MDBBtn, } from 'mdb-react-ui-kit';
@@ -8,6 +8,7 @@ import Home from "./Home";
 import NaviGame from "./NaviGame";
 import Instrukcje from "./Instructions";
 import Licznik from "./licznik/LicznikApp";
+import Timer from "./timer/TimerApp.js";
 import Test from "./Test";
 
 function NaviApp() {
@@ -36,12 +37,29 @@ function NaviApp() {
                   <Nav.Link as={Link} to="instrukcje" onClick={handleMenuClick}>
                     Instrukcje
                   </Nav.Link>
-                  <Nav.Link as={Link} to="licznik" onClick={handleMenuClick}>
+                  <NavDropdown title="Więcej" id="basic-nav-dropdown">
+                    <Nav.Link as={Link} to="licznik" onClick={handleMenuClick}>
+                      Licznik
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="timer" onClick={handleMenuClick}>
+                      Timer
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="test" onClick={handleMenuClick}>
+                      Test
+                    </Nav.Link>
+                  </NavDropdown>
+                  {/* <Nav.Link as={Link} to="licznik" onClick={handleMenuClick}>
                     Licznik
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="test" onClick={handleMenuClick}>
-                    Test
-                  </Nav.Link>
+                  </Nav.Link> */}
+                  {/* <Nav.Link as={Link} to="timer" onClick={handleMenuClick}>
+                    Timer
+                  </Nav.Link> */}
+                  {/* <Nav.Link as={Link} to="timer" onClick={handleMenuClick}>
+                    Timer
+                  </Nav.Link>            */}
+                  {/* <Nav.Link as={Link} to="test" onClick={handleMenuClick}>
+                    Losowanie
+                  </Nav.Link> */}
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -55,6 +73,7 @@ function NaviApp() {
           <Route path="/home" element={<Home />} />
           <Route path="/instrukcje" element={<Instrukcje />} />
           <Route path="/licznik" element={<Licznik />} />
+          <Route path="/timer" element={<Timer />} />
           <Route path="/test" element={<Test />} />
         </Routes>
       </div>
