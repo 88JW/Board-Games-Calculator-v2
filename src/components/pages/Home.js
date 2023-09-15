@@ -9,8 +9,8 @@ function Home() {
         <p>elementy które zostaną dodane w najbliższym czasie:</p>
         <ol>
           <li><s>timer na ruch</s></li>
-          <li>Ruletka</li>
-          <li>Półk</li>
+          <li><s>Ruletka</s></li>
+          <li><s>Biblioteka</s></li>
         </ol>
         <p>do zmiany:</p>
         <ol>
@@ -19,7 +19,7 @@ function Home() {
           <li>zmiana fontu czcionek</li>
           <li>zmiana kolorystyki tła i elementów generowanych</li>
         </ol>
-        <p>wersja z dnia 11.09.2023 20:07</p>
+        <p>wersja z dnia 14.09.2023 21:02</p>
       </Container>
       <MDBFooter className='text-center text-white footer-own' style={{ backgroundColor: '#21081a' }}>
 
