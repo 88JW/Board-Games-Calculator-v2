@@ -9,6 +9,7 @@ import NaviGame from "./NaviGame";
 import Instrukcje from "./Instructions";
 import Licznik from "./licznik/LicznikApp";
 import Timer from "./timer/TimerApp.js";
+import Losowanie from "./losowanie/LosowanieApp";
 import Test from "./Test";
 
 function NaviApp() {
@@ -44,6 +45,9 @@ function NaviApp() {
                     <Nav.Link as={Link} to="timer" onClick={handleMenuClick}>
                       Timer
                     </Nav.Link>
+                    <Nav.Link as={Link} to="losowanie" onClick={handleMenuClick}>
+                      Biblioteka i Losowanie
+                    </Nav.Link>
                     <Nav.Link as={Link} to="test" onClick={handleMenuClick}>
                       Test
                     </Nav.Link>
@@ -74,6 +78,7 @@ function NaviApp() {
           <Route path="/instrukcje" element={<Instrukcje />} />
           <Route path="/licznik" element={<Licznik />} />
           <Route path="/timer" element={<Timer />} />
+          <Route path="/losowanie" element={<Losowanie />} />
           <Route path="/test" element={<Test />} />
         </Routes>
       </div>
