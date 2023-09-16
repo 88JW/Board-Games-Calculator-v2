@@ -6,6 +6,7 @@ const Timer = () => {
   const [initialTime, setInitialTime] = useState(60);
   const [currentTime, setCurrentTime] = useState(initialTime);
   const [isRunning, setIsRunning] = useState(false);
+  const [isVibrationTriggered, setIsVibrationTriggered] = useState(false);
 
   const handleInputChange = (event) => {
     setInitialTime(event.target.value);
@@ -25,17 +26,11 @@ const Timer = () => {
     setIsRunning(false);
   };
 
-  // const checkVibration = () => {
-  //   if (currentTime <= 30) {
-  //     navigator.vibrate(3000);
-  //   }
-  // };
-
   useEffect(() => {
     const checkVibration = () => {
-      if (currentTime <= 30) {
+      if (currentTime === 30 && !isVibrationTriggered) {
         navigator.vibrate(3000);
-        console.log("vibration");
+        setIsVibrationTriggered(true);
       }
     };
 
@@ -56,7 +51,7 @@ const Timer = () => {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isRunning, currentTime, initialTime]);
+  }, [isRunning, currentTime, initialTime, isVibrationTriggered]);
 
   return (
     <div>

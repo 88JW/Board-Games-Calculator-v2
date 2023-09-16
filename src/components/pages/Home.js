@@ -19,7 +19,12 @@ function Home() {
           <li>zmiana fontu czcionek</li>
           <li>zmiana kolorystyki tła i elementów generowanych</li>
         </ol>
-        <p>wersja z dnia 14.09.2023 21:02</p>
+
+        <h2>Stwrzyć dokumentację do projektu</h2>
+        <ol>
+          <li>Opisać działanie uruchamiania wibracji w TimmerApp.js</li>
+        </ol>
+        <p>wersja z dnia 15.09.2023 22:12</p>
       </Container>
       <MDBFooter className='text-center text-white footer-own' style={{ backgroundColor: '#21081a' }}>
 
