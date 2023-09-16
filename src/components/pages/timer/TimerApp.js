@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Container, } from "react-bootstrap";
-import { MDBInput, MDBBtn, } from "mdb-react-ui-kit";
+import { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
+import { MDBBtn, MDBInput } from "mdb-react-ui-kit";
 
 const Timer = () => {
-  const [initialTime, setInitialTime] = useState(180);
+  const [initialTime, setInitialTime] = useState(60);
   const [currentTime, setCurrentTime] = useState(initialTime);
   const [isRunning, setIsRunning] = useState(false);
 
   const handleInputChange = (event) => {
-    setInitialTime(parseInt(event.target.value));
+    setInitialTime(event.target.value);
+    setCurrentTime(event.target.value);
   };
 
   const startTimer = () => {
@@ -17,35 +18,53 @@ const Timer = () => {
 
   const stopTimer = () => {
     setIsRunning(false);
-    clearInterval(intervalRef.current);
   };
 
   const resetTimer = () => {
-    setIsRunning(false);
     setCurrentTime(initialTime);
-    clearInterval(intervalRef.current);
+    setIsRunning(false);
   };
 
-  const intervalRef = React.useRef(null);
+  // const checkVibration = () => {
+  //   if (currentTime <= 30) {
+  //     navigator.vibrate(3000);
+  //   }
+  // };
 
   useEffect(() => {
-    if (isRunning && currentTime > 0) {
-      intervalRef.current = setInterval(() => {
-        setCurrentTime((prevTime) => prevTime - 1);
+    const checkVibration = () => {
+      if (currentTime <= 30) {
+        navigator.vibrate(3000);
+        console.log("vibration");
+      }
+    };
+
+    let interval = null;
+    if (isRunning) {
+      interval = setInterval(() => {
+        setCurrentTime((prevTime) => {
+          if (prevTime === 0) {
+            clearInterval(interval);
+            setIsRunning(false);
+            return 0;
+          }
+          checkVibration();
+          return prevTime - 1;
+        });
       }, 1000);
-    } else if (currentTime === 0) {
-      setIsRunning(false);
+    } else if (!isRunning && currentTime !== initialTime) {
+      clearInterval(interval);
     }
-    return () => clearInterval(intervalRef.current);
-  }, [isRunning, currentTime]);
+    return () => clearInterval(interval);
+  }, [isRunning, currentTime, initialTime]);
 
   return (
     <div>
-      <Container className="contenerGraczy">
+      <Container className="text-center">
         <h3>Wybierz czas jaki gracz będzie miał na wykonanie swojego ruchu:</h3>
         <MDBInput
           type="number"
-          placeholder="Enter time in seconds"
+          placeholder="Podaj czas w sekundach"
           onChange={handleInputChange}
           value={initialTime}
           size="lg"
@@ -62,8 +81,8 @@ const Timer = () => {
         <MDBBtn onClick={resetTimer}
           color="info" size="lg" className="me-1 fs-6">Reset</MDBBtn>
 
-       <br></br>
-        
+        <br></br>
+
         <h2>Pozostały czas na ruch:<br></br> {currentTime} s</h2>
       </Container>
     </div>
