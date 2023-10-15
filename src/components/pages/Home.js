@@ -24,7 +24,7 @@ function Home() {
         <ol>
           <li>Opisać działanie uruchamiania wibracji w TimmerApp.js</li>
         </ol>
-        <p>wersja z dnia 15.09.2023 22:12</p>
+        <p>wersja z dnia 15.10.2023 20:09</p>
       </Container>
       <MDBFooter className='text-center text-white footer-own' style={{ backgroundColor: '#21081a' }}>
 
