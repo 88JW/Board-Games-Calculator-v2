@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
 function NumberForm({ formCount, playerName }) {
   const [number1, setNumber1] = useState("");
   const [number2, setNumber2] = useState("");
@@ -12,7 +10,12 @@ function NumberForm({ formCount, playerName }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const sum = parseInt(number1) + parseInt(number2) + parseInt(number3);
+    let sum = 0;
+    try {
+      sum = eval(`${number1}+${number2}+${number3}`);
+    } catch (error) {
+      console.log(error);
+    }
     setSum(sum);
   };
 
@@ -29,7 +32,12 @@ function NumberForm({ formCount, playerName }) {
   };
 
   const handleButtonClick = () => {
-    const sum = parseInt(number1) + parseInt(number2) + parseInt(number3);
+    let sum = 0;
+    try {
+      sum = eval(`${number1}+${number2}+${number3}`);
+    } catch (error) {
+      console.log(error);
+    }
     setSum(sum);
   };
 
@@ -50,8 +58,8 @@ function NumberForm({ formCount, playerName }) {
             Suma Nakarmionych Psów:<br></br>
           </Form.Label>
           <Form.Control
-            type="number"
-            placeholder="Wprowadź punkty"
+            type="text"
+            placeholder="Wprowadź punkty lub działanie matematyczne"
             value={number1}
             onChange={handleChange1}
           />
@@ -78,6 +86,9 @@ function NumberForm({ formCount, playerName }) {
             onChange={handleChange3}
           />
         </Form.Group>
+        <Button className="btnSuma" variant="primary" type="submit">
+          Oblicz sumę
+        </Button>
       </Form>
       <p>Suma wprowadzonych liczb: {sum}</p>
       <Button className="btnSuma" variant="primary" onClick={handleButtonClick}>
