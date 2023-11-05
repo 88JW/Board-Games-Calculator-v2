@@ -3,6 +3,20 @@ import { Container, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ".././css/contenerGraczy.css";
 
+function calculateExpression(expression) {
+  let numbers = expression.split(/[+-]/);
+  let operators = expression.split(/\d+/).slice(1, -1);
+  let result = Number(numbers[0]);
+  for (let i = 0; i < operators.length; i++) {
+    if (operators[i] === "+") {
+      result += Number(numbers[i + 1]);
+    } else if (operators[i] === "-") {
+      result -= Number(numbers[i + 1]);
+    }
+  }
+  return result;
+}
+
 function NumberForm({ formCount, playerName }) {
   const [number1, setNumber1] = useState(0);
   const [number2, setNumber2] = useState(0);
@@ -15,7 +29,8 @@ function NumberForm({ formCount, playerName }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const sum = parseInt(number1) + parseInt(number2) + parseInt(number3) + parseInt(number4) + parseInt(number5) + parseInt(number6) + parseInt(number7);
+    const num1 = isNaN(number1) ? calculateExpression(number1) : parseInt(number1);
+    const sum = num1 + parseInt(number2) + parseInt(number3) + parseInt(number4) + parseInt(number5) + parseInt(number6) + parseInt(number7);
     setSum(sum);
   };
 
@@ -45,12 +60,13 @@ function NumberForm({ formCount, playerName }) {
   };
 
   const handleButtonClick = () => {
-    const sum = parseInt(number1) + parseInt(number2) + parseInt(number3) + parseInt(number4) + parseInt(number5) + parseInt(number6) + parseInt(number7);
+    const num1 = isNaN(number1) ? calculateExpression(number1) : parseInt(number1);
+    const sum = num1 + parseInt(number2) + parseInt(number3) + parseInt(number4) + parseInt(number5) + parseInt(number6) + parseInt(number7);
     setSum(sum);
   };
 
   const handleResetClick = () => {
-    setNumber1(0);
+    setNumber1("");
     setNumber2(0);
     setNumber3(0);
     setNumber4(0);
@@ -67,11 +83,11 @@ function NumberForm({ formCount, playerName }) {
         <Form.Group controlId="formNumber1">
           <Form.Label>
             {" "}
-            Ptaki:<br></br>
+            Suma<br></br>
           </Form.Label>
           <Form.Control
-            type="number"
-            placeholder="Wprowadź punkty"
+            type="text"
+            placeholder="Wprowadź punkty lub działanie matematyczne"
             value={number1}
             onChange={handleChange1}
           />

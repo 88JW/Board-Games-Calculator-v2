@@ -15,7 +15,7 @@ function NumberForm({ formCount, playerName }) {
       sum = eval(`${number1}+${number2}+${number3}`);
     } catch (error) {
       console.log(error);
-    }
+    } 
     setSum(sum);
   };
 
