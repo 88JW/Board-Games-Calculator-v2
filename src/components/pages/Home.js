@@ -14,6 +14,7 @@ function Home() {
         </ol>
         <p>do zmiany:</p>
         <ol>
+          <li>dodanie matematyki do gier</li>
           <li>dodanie rozwujanego menu z MuI</li>
           <li>zmiana kolorów czcionek</li>
           <li>zmiana fontu czcionek</li>
@@ -24,7 +25,7 @@ function Home() {
         <ol>
           <li>Opisać działanie uruchamiania wibracji w TimmerApp.js</li>
         </ol>
-        <p>wersja z dnia 15.10.2023 20:09</p>
+        <p>wersja z dnia 05.11.2023 10:40</p>
       </Container>
       <MDBFooter className='text-center text-white footer-own' style={{ backgroundColor: '#21081a' }}>
 

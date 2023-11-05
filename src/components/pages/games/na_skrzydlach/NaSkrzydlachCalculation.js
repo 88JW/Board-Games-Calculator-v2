@@ -30,7 +30,9 @@ function NumberForm({ formCount, playerName }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const num1 = isNaN(number1) ? calculateExpression(number1) : parseInt(number1);
-    const sum = num1 + parseInt(number2) + parseInt(number3) + parseInt(number4) + parseInt(number5) + parseInt(number6) + parseInt(number7);
+    const num2 = isNaN(number2) ? calculateExpression(number2) : parseInt(number2);
+    const num7 = isNaN(number7) ? calculateExpression(number7) : parseInt(number7);
+    const sum = num1 + num2 + parseInt(number3) + parseInt(number4) + parseInt(number5) + parseInt(number6) + num7;
     setSum(sum);
   };
 
@@ -61,18 +63,20 @@ function NumberForm({ formCount, playerName }) {
 
   const handleButtonClick = () => {
     const num1 = isNaN(number1) ? calculateExpression(number1) : parseInt(number1);
-    const sum = num1 + parseInt(number2) + parseInt(number3) + parseInt(number4) + parseInt(number5) + parseInt(number6) + parseInt(number7);
+    const num2 = isNaN(number2) ? calculateExpression(number2) : parseInt(number2);
+    const num7 = isNaN(number7) ? calculateExpression(number7) : parseInt(number7);
+    const sum = num1 + num2 + parseInt(number3) + parseInt(number4) + parseInt(number5) + parseInt(number6) + num7;
     setSum(sum);
   };
 
   const handleResetClick = () => {
     setNumber1("");
-    setNumber2(0);
+    setNumber2("");
     setNumber3(0);
     setNumber4(0);
     setNumber5(0);
     setNumber6(0);
-    setNumber7(0);
+    setNumber7("");
     setSum("");
   };
 
@@ -83,7 +87,7 @@ function NumberForm({ formCount, playerName }) {
         <Form.Group controlId="formNumber1">
           <Form.Label>
             {" "}
-            Suma<br></br>
+            Ptaszki<br></br>
           </Form.Label>
           <Form.Control
             type="text"
@@ -97,8 +101,8 @@ function NumberForm({ formCount, playerName }) {
             Karty Bonusowe:<br></br>
           </Form.Label>
           <Form.Control
-            type="number"
-            placeholder="Wprowadź punkty"
+            type="text"
+            placeholder="Wprowadź punkty lub działanie matematyczne"
             value={number2}
             onChange={handleChange2}
           />
@@ -149,10 +153,10 @@ function NumberForm({ formCount, playerName }) {
         </Form.Group>
         <Form.Group controlId="formNumber7">
           <Form.Label>
-            Znaczniki Duetu / Cele <br></br>
+            *Znaczniki Duetu / *Cele / *Nektar <br></br>
           </Form.Label>
           <Form.Control
-            type="number"
+            type="text"
             placeholder="Wprowadź punkty"
             value={number7}
             onChange={handleChange7}
