@@ -87,7 +87,7 @@ function NumberForm({ formCount, playerName }) {
         <Form.Group controlId="formNumber1">
           <Form.Label>
             {" "}
-            Ptaszki<br></br>
+            <div className="labbelHeader">Ptaszki</div>
           </Form.Label>
           <Form.Control
             type="text"
@@ -98,7 +98,7 @@ function NumberForm({ formCount, playerName }) {
         </Form.Group>
         <Form.Group controlId="formNumber2">
           <Form.Label>
-            Karty Bonusowe:<br></br>
+            <div className="labbelHeader">Karty Bonusowe:</div>
           </Form.Label>
           <Form.Control
             type="text"
@@ -109,7 +109,7 @@ function NumberForm({ formCount, playerName }) {
         </Form.Group>
         <Form.Group controlId="formNumber3">
           <Form.Label>
-            Cele:<br></br>
+            <div className="labbelHeader">Cele:</div>
           </Form.Label>
           <Form.Control
             type="number"
@@ -120,7 +120,7 @@ function NumberForm({ formCount, playerName }) {
         </Form.Group>
         <Form.Group controlId="formNumber4">
           <Form.Label>
-            Jajka:<br></br>
+            <div className="labbelHeader">Jajka:</div>
           </Form.Label>
           <Form.Control
             type="number"
@@ -131,7 +131,7 @@ function NumberForm({ formCount, playerName }) {
         </Form.Group>
         <Form.Group controlId="formNumber5">
           <Form.Label>
-            Pożywienie Na Kartach:<br></br>
+            <div className="labbelHeader">   Pożywienie Na Kartach:</div>
           </Form.Label>
           <Form.Control
             type="number"
@@ -142,7 +142,7 @@ function NumberForm({ formCount, playerName }) {
         </Form.Group>
         <Form.Group controlId="formNumber6">
           <Form.Label>
-            Karta Pod Inną Kartą:<br></br>
+            <div className="labbelHeader">    Karta Pod Inną Kartą: </div>
           </Form.Label>
           <Form.Control
             type="number"
@@ -153,7 +153,7 @@ function NumberForm({ formCount, playerName }) {
         </Form.Group>
         <Form.Group controlId="formNumber7">
           <Form.Label>
-            *Znaczniki Duetu / *Cele / *Nektar <br></br>
+            <div className="labbelHeader">  *Znaczniki Duetu / *Cele / *Nektar </div>
           </Form.Label>
           <Form.Control
             type="text"

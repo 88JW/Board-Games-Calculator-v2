@@ -21,5 +21,11 @@
 
 .winner{
   outline: solid 2px rgb(0, 203, 85);
-outline-offset: -2px;
+  outline-offset: -2px;
+}
+
+.labbelHeader{
+  font-size: calc(10px + 2vmin);
+  color: white; 
+  
 }

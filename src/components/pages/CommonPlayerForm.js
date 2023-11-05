@@ -29,7 +29,7 @@ function CommonPlayerForm(props) {
   return (
     <Form>
       <Form.Group controlId="formNumPlayers">
-        <Form.Label>Liczba graczy:</Form.Label>
+        <Form.Label><div className="labbelHeader">Liczba graczy:</div></Form.Label>
         <Form.Control as="select" onChange={handleNumPlayersChange}>
           <option value="0">Wybierz liczbę graczy...</option>
           <option value="1">1 gracz</option>
@@ -41,7 +41,7 @@ function CommonPlayerForm(props) {
       {/* Renderowanie pól do wprowadzania nazw graczy */}
       {[...Array(numPlayers)].map((_, index) => (
         <Form.Group controlId="formPlayerName" key={index}>
-          <Form.Label>Wprowadź nazwę gracza {index + 1}:</Form.Label>
+          <Form.Label> <div className="labbelHeader">Wprowadź nazwę gracza {index + 1}:</div></Form.Label>
           <Form.Control
             type="text"
             placeholder="Wprowadź nazwę"
@@ -63,7 +63,7 @@ function CommonPlayerForm(props) {
         Rozpocznij
       </Button>
     </Form>
-    
+
   );
 }
 
